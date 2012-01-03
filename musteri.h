@@ -1,0 +1,324 @@
+//---------------------------------------------------------------------------
+
+#ifndef musteriH
+#define musteriH
+//---------------------------------------------------------------------------
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <StdCtrls.hpp>
+#include <Forms.hpp>
+#include <DBCtrls.hpp>
+#include <ExtCtrls.hpp>
+#include <Mask.hpp>
+#include <ComCtrls.hpp>
+#include <DBGrids.hpp>
+#include <Grids.hpp>
+#include <Menus.hpp>
+#include <ToolWin.hpp>
+#include <Dialogs.hpp>
+#include <ExtDlgs.hpp>
+#include <ImgList.hpp>
+#include <Db.hpp>
+#include <DBTables.hpp>
+//---------------------------------------------------------------------------
+class TfrmMusteri : public TForm
+{
+__published:	// IDE-managed Components
+    TToolBar *ToolBar1;
+    TToolButton *tbtnYENI;
+    TToolButton *tbtnKAYDET;
+    TToolButton *tbtnSIL;
+    TToolButton *ToolButton4;
+    TToolButton *tbtnAC;
+    TOpenPictureDialog *OpenPictureDialog1;
+    TImageList *ImageList1;
+    TToolButton *ToolButton6;
+    TToolButton *tbtnYAZDIR;
+    TPopupMenu *PopupMenu1;
+    TMenuItem *ResimEkle1;
+    TMenuItem *ResimKaydet1;
+    TTable *tblMUSTERI;
+    TDataSource *dsrcMUSTERI;
+    TStatusBar *StatusBar1;
+    TDataSource *dsrcPERSON;
+    TQuery *queryPERSON;
+    TPageControl *PageControl1;
+    TTabSheet *TabSheet1;
+    TGroupBox *GroupBox1;
+    TLabel *Label1;
+    TLabel *Label2;
+    TLabel *Label3;
+    TLabel *Label4;
+    TLabel *Label5;
+    TLabel *Label6;
+    TLabel *Label7;
+    TLabel *Label8;
+    TLabel *Label9;
+    TLabel *Label10;
+    TLabel *Label13;
+    TLabel *Label16;
+    TLabel *Label31;
+    TPanel *Panel1;
+    TDBImage *DBImage1;
+    TDBEdit *KARTNO_Edit;
+    TDBEdit *TARIH_Edit;
+    TDBEdit *ADI_Edit;
+    TDBEdit *SOYADI_Edit;
+    TDBEdit *EVADRESI1_Edit;
+    TDBEdit *EVADRESI2_Edit;
+    TDBEdit *ISADRESI1_Edit;
+    TDBEdit *ISADRESI2_Edit;
+    TDBEdit *EVTEL_Edit;
+    TDBEdit *ISTEL_Edit;
+    TDBEdit *CEPTEL_Edit;
+    TDBEdit *EMAIL_Edit;
+    TDBEdit *DTARIHI_Edit;
+    TDBEdit *KANGRUBU_Edit;
+    TDBEdit *MESLEGI_Edit;
+    TGroupBox *GroupBox4;
+    TGroupBox *GroupBox2;
+    TLabel *Label11;
+    TLabel *Label12;
+    TLabel *Label14;
+    TDBLookupComboBox *KUAFOR_combo;
+    TDBEdit *SACORANI_Edit;
+    TDBComboBox *ANARENGI_combo;
+    TGroupBox *GroupBox3;
+    TDBCheckBox *chkDOGAL;
+    TDBCheckBox *chkBOYALI;
+    TDBCheckBox *chkPERMALI;
+    TDBCheckBox *chkROFLE;
+    TDBRadioGroup *DBRadioGroup1;
+    TDBRadioGroup *DBRadioGroup2;
+    TGroupBox *GroupBox5;
+    TLabel *Label17;
+    TLabel *Label18;
+    TLabel *Label19;
+    TLabel *Label20;
+    TLabel *Label21;
+    TLabel *Label23;
+    TLabel *Label24;
+    TLabel *Label22;
+    TLabel *Label25;
+    TLabel *Label26;
+    TLabel *Label27;
+    TLabel *Label28;
+    TLabel *Label29;
+    TLabel *Label30;
+    TLabel *Label15;
+    TDBEdit *KURU_Edit;
+    TDBEdit *KARMA_Edit;
+    TDBEdit *AKNELI_Edit;
+    TDBEdit *HASSAS_Edit;
+    TDBEdit *YAGLI_Edit;
+    TDBEdit *TURGOR_Edit;
+    TDBEdit *KUPEROZ_Edit;
+    TDBEdit *NEMORANI_Edit;
+    TDBEdit *PIGMENTASTON_Edit;
+    TDBEdit *EGZAMA_Edit;
+    TDBEdit *YUZFORMU_Edit;
+    TDBEdit *ELASTIKISYET_Edit;
+    TDBEdit *KALINLIK_Edit;
+    TDBEdit *KIRISIKLIK_Edit;
+    TDBLookupComboBox *DBLookupComboBox1;
+    TTabSheet *TabSheet2;
+    TDBMemo *DBMemo1;
+    TTabSheet *TabSheet4;
+    TTabSheet *TabSheet5;
+    TQuery *queryKONTROL;
+    TStringField *queryKONTROLKARTNO;
+    TDateField *queryKONTROLTARIH;
+    TStringField *queryKONTROLM_ADI;
+    TStringField *queryKONTROLM_SOYADI;
+    TMemoField *queryKONTROLACIKLAMA;
+    TStringField *queryKONTROLEV_ADRESI1;
+    TStringField *queryKONTROLEV_ADRESI2;
+    TStringField *queryKONTROLIS_ADRESI1;
+    TStringField *queryKONTROLIS_ADRESI2;
+    TStringField *queryKONTROLEV_TEL;
+    TStringField *queryKONTROLIS_TEL;
+    TStringField *queryKONTROLCEP_TEL;
+    TStringField *queryKONTROLE_MAIL;
+    TGraphicField *queryKONTROLRESIM;
+    TDateField *queryKONTROLDOGUM_TARIHI;
+    TStringField *queryKONTROLKUAFOR_ADI;
+    TStringField *queryKONTROLANA_RENGI;
+    TFloatField *queryKONTROLSAC_ORANI;
+    TBooleanField *queryKONTROLDOGAL;
+    TBooleanField *queryKONTROLBOYALI;
+    TBooleanField *queryKONTROLPERMALI;
+    TBooleanField *queryKONTROLROFLE;
+    TStringField *queryKONTROLDURUM;
+    TStringField *queryKONTROLSAC_TIPI;
+    TStringField *queryKONTROLKANGRUBU;
+    TStringField *queryKONTROLMESLEGI;
+    TStringField *queryKONTROLKURU;
+    TStringField *queryKONTROLKARMA;
+    TStringField *queryKONTROLAKNELI;
+    TStringField *queryKONTROLHASSAS;
+    TStringField *queryKONTROLYAGLI;
+    TStringField *queryKONTROLTURGOR;
+    TStringField *queryKONTROLKUPEROZ;
+    TStringField *queryKONTROLNEMORANI;
+    TStringField *queryKONTROLPIGMENTASYON;
+    TStringField *queryKONTROLEGZAMA;
+    TStringField *queryKONTROLYUZFORMU;
+    TStringField *queryKONTROLELASTIKIYET;
+    TStringField *queryKONTROLKALINLIK;
+    TStringField *queryKONTROLKIRISIKLIK;
+    TStringField *queryKONTROLTERAPIST;
+    TDBGrid *DBGrid1;
+    TDataSource *dsrcFORMUL;
+    TQuery *queryFORMUL;
+    TGroupBox *GroupBox6;
+    TDBGrid *DBGrid2;
+    TDataSource *dsrcADISYON;
+    TQuery *queryADISYON;
+    TStringField *tblMUSTERIKARTNO;
+    TDateField *tblMUSTERITARIH;
+    TStringField *tblMUSTERIM_ADI;
+    TStringField *tblMUSTERIM_SOYADI;
+    TMemoField *tblMUSTERIACIKLAMA;
+    TStringField *tblMUSTERIEV_ADRESI1;
+    TStringField *tblMUSTERIEV_ADRESI2;
+    TStringField *tblMUSTERIIS_ADRESI1;
+    TStringField *tblMUSTERIIS_ADRESI2;
+    TStringField *tblMUSTERIEV_TEL;
+    TStringField *tblMUSTERIIS_TEL;
+    TStringField *tblMUSTERICEP_TEL;
+    TStringField *tblMUSTERIE_MAIL;
+    TGraphicField *tblMUSTERIRESIM;
+    TDateField *tblMUSTERIDOGUM_TARIHI;
+    TStringField *tblMUSTERIKUAFOR_ADI;
+    TStringField *tblMUSTERIANA_RENGI;
+    TFloatField *tblMUSTERISAC_ORANI;
+    TBooleanField *tblMUSTERIDOGAL;
+    TBooleanField *tblMUSTERIBOYALI;
+    TBooleanField *tblMUSTERIPERMALI;
+    TBooleanField *tblMUSTERIROFLE;
+    TStringField *tblMUSTERIDT;
+    TStringField *tblMUSTERIDURUM;
+    TStringField *tblMUSTERISAC_TIPI;
+    TStringField *tblMUSTERIKANGRUBU;
+    TStringField *tblMUSTERIMESLEGI;
+    TStringField *tblMUSTERIKURU;
+    TStringField *tblMUSTERIKARMA;
+    TStringField *tblMUSTERIAKNELI;
+    TStringField *tblMUSTERIHASSAS;
+    TStringField *tblMUSTERIYAGLI;
+    TStringField *tblMUSTERITURGOR;
+    TStringField *tblMUSTERIKUPEROZ;
+    TStringField *tblMUSTERINEMORANI;
+    TStringField *tblMUSTERIPIGMENTASYON;
+    TStringField *tblMUSTERIEGZAMA;
+    TStringField *tblMUSTERIYUZFORMU;
+    TStringField *tblMUSTERIELASTIKIYET;
+    TStringField *tblMUSTERIKALINLIK;
+    TStringField *tblMUSTERIKIRISIKLIK;
+    TStringField *tblMUSTERITERAPIST;
+    TStringField *queryKONTROLDT;
+    TTabSheet *TabSheet3;
+    TGroupBox *GroupBox7;
+    TDBGrid *DBGrid3;
+    TDataSource *dsrcRANDEVU;
+    TQuery *queryRANDEVU;
+    TToolButton *ToolButton1;
+    TToolButton *ToolButton2;
+    TToolButton *ToolButton3;
+        void __fastcall KuaforGirileri1Click(TObject *Sender);
+    void __fastcall DBImage1Click(TObject *Sender);
+    void __fastcall tblMUSTERIAfterInsert(TDataSet *DataSet);
+    void __fastcall tbtnYENIClick(TObject *Sender);
+    void __fastcall tbtnKAYDETClick(TObject *Sender);
+    void __fastcall tbtnSILClick(TObject *Sender);
+    void __fastcall ADI_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall EVADRESI1_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall SOYADI_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall EVADRESI2_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall ISADRESI1_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall ISADRESI2_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall EMAIL_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall Anahtar(void);
+    void __fastcall Kilit(void);
+    void __fastcall EVTEL_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall ISTEL_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall CEPTEL_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall KUAFOR_comboKeyPress(TObject *Sender, char &Key);
+    void __fastcall ANARENGI_comboKeyPress(TObject *Sender, char &Key);
+    void __fastcall SACORANI_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall DTARIHI_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall KARTNO_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall TARIH_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall ADI_EditChange(TObject *Sender);
+    void __fastcall SOYADI_EditChange(TObject *Sender);
+    void __fastcall EVADRESI1_EditChange(TObject *Sender);
+    void __fastcall EVADRESI2_EditChange(TObject *Sender);
+    void __fastcall ISADRESI1_EditChange(TObject *Sender);
+    void __fastcall ISADRESI2_EditChange(TObject *Sender);
+    void __fastcall EMAIL_EditChange(TObject *Sender);
+    void __fastcall EVTEL_EditChange(TObject *Sender);
+    void __fastcall ISTEL_EditChange(TObject *Sender);
+    void __fastcall CEPTEL_EditChange(TObject *Sender);
+    void __fastcall TARIH_EditChange(TObject *Sender);
+    void __fastcall KUAFOR_comboClick(TObject *Sender);
+    void __fastcall ANARENGI_comboChange(TObject *Sender);
+    void __fastcall SACORANI_EditChange(TObject *Sender);
+    void __fastcall DTARIHI_EditChange(TObject *Sender);
+    void __fastcall chkDOGALClick(TObject *Sender);
+    void __fastcall chkBOYALIClick(TObject *Sender);
+    void __fastcall chkPERMALIClick(TObject *Sender);
+    void __fastcall chkROFLEClick(TObject *Sender);
+    void __fastcall DBRadioGroup1Change(TObject *Sender);
+    void __fastcall DBRadioGroup2Change(TObject *Sender);
+    void __fastcall DBRadioGroup1Click(TObject *Sender);
+    void __fastcall DBRadioGroup2Click(TObject *Sender);
+    void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
+    void __fastcall tbtnACClick(TObject *Sender);
+    void __fastcall FormShow(TObject *Sender);
+    void __fastcall KANGRUBU_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall MESLEGI_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall KURU_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall AKNELI_EditChange(TObject *Sender);
+    void __fastcall AKNELI_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall KARMA_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall HASSAS_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall YAGLI_EditChange(TObject *Sender);
+    void __fastcall YAGLI_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall TURGOR_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall KUPEROZ_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall NEMORANI_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall PIGMENTASTON_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall EGZAMA_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall YUZFORMU_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall ELASTIKISYET_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall KALINLIK_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall KIRISIKLIK_EditKeyPress(TObject *Sender, char &Key);
+    void __fastcall DBLookupComboBox1KeyPress(TObject *Sender, char &Key);
+    void __fastcall KURU_EditChange(TObject *Sender);
+    void __fastcall KARMA_EditChange(TObject *Sender);
+    void __fastcall HASSAS_EditChange(TObject *Sender);
+    void __fastcall TURGOR_EditChange(TObject *Sender);
+    void __fastcall KUPEROZ_EditChange(TObject *Sender);
+    void __fastcall NEMORANI_EditChange(TObject *Sender);
+    void __fastcall PIGMENTASTON_EditChange(TObject *Sender);
+    void __fastcall EGZAMA_EditChange(TObject *Sender);
+    void __fastcall YUZFORMU_EditChange(TObject *Sender);
+    void __fastcall ELASTIKISYET_EditChange(TObject *Sender);
+    void __fastcall KALINLIK_EditChange(TObject *Sender);
+    void __fastcall KIRISIKLIK_EditChange(TObject *Sender);
+    void __fastcall DBLookupComboBox1Click(TObject *Sender);
+    void __fastcall KANGRUBU_EditChange(TObject *Sender);
+    void __fastcall MESLEGI_EditChange(TObject *Sender);
+    void __fastcall DBMemo1Change(TObject *Sender);
+    void __fastcall KARTNO_EditChange(TObject *Sender);
+    void __fastcall ToolButton2Click(TObject *Sender);
+    void __fastcall ToolButton3Click(TObject *Sender);
+private:	// User declarations
+public:		// User declarations
+    __fastcall TfrmMusteri(TComponent* Owner);
+    AnsiString __fastcall TarihiAyarla(TDateTime Zaman);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TfrmMusteri *frmMusteri;
+//---------------------------------------------------------------------------
+#endif
